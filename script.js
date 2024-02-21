@@ -19,7 +19,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
                 <div class="weather-header">
                     <h2>Weather in ${data.name}, ${data.sys.country}</h2>
                     <div class="weather-icon-container">
-                        <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" class="weather-icon" />
+                        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" class="weather-icon" />
                     </div>
                 </div>
                 <div class="weather-details">
