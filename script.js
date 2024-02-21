@@ -1,10 +1,8 @@
-// Event listener for the weather form submission
 document.getElementById("form").addEventListener("submit", function (event) {
     event.preventDefault();
 
     const city = document.getElementById("cityInput").value;
-    const apiKey = "2d4671e44b406b790aa7e7db33a6dfd5";
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2d4671e44b406b790aa7e7db33a6dfd5&units=metric`;
 
     fetch(apiUrl)
         .then(response => {
@@ -47,8 +45,6 @@ document.getElementById("form").addEventListener("submit", function (event) {
 // Dark Mode Toggle
 document.getElementById('darkModeToggle').addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
-
-    // Save the dark mode state in localStorage for persistence
     if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('darkMode', 'enabled');
     } else {
@@ -56,7 +52,6 @@ document.getElementById('darkModeToggle').addEventListener('click', function () 
     }
 });
 
-// Check localStorage for dark mode setting on page load
 if (localStorage.getItem('darkMode') === 'enabled') {
     document.body.classList.add('dark-mode');
 }
