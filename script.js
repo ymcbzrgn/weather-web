@@ -2,7 +2,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
     event.preventDefault();
 
     const city = document.getElementById("cityInput").value;
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2d4671e44b406b790aa7e7db33a6dfd5&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2d4671e44b406b790aa7e7db33a6dfd5&units=metric`;
 
     fetch(apiUrl)
         .then(response => {
