@@ -1,4 +1,3 @@
-/* Reset some basic elements */
 body, h2, p, form, input, button {
     margin: 0;
     padding: 0;
@@ -18,7 +17,6 @@ body {
     --shadow-color: var(--shadow-color-light);
 }
 
-/* Container for the app */
 .search-container {
     max-width: 600px;
     margin: 20px auto;
@@ -64,30 +62,31 @@ button:hover {
 }
 
 .weather-icon-container {
-    width: 100px; /* Slightly larger to enhance visibility */
-    height: 100px; /* Matching height for a square aspect ratio */
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto; /* Increase margin for better spacing */
-    background-color: var(--icon-bg-color, #f0f0f0); /* Background color with a default fallback */
-    box-shadow: 0 8px 15px var(--shadow-color); /* Larger shadow for a more pronounced effect */
-    border-radius: 20px; /* Increased border-radius for a softer look */
+    margin: 20px auto;
+    background-color: var(--icon-bg-color, #f0f0f0);
+    filter: drop-shadow(0 8px 15px var(--shadow-color));
+    border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    transition: transform 0.3s ease;
 }
 
 .weather-icon-container:hover {
-    transform: scale(1.05); /* Slightly scale up on hover for an interactive feel */
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 15px var(--shadow-color));
 }
 
 .weather-icon {
-    width: auto; /* Adjust width automatically to maintain aspect ratio */
-    height: 80%; /* Adjust height to ensure it fits well within the container, leaving some padding */
-    transition: transform 0.3s ease-out; /* Animation for the icon */
+    width: auto;
+    height: 80%;
+    transition: transform 0.3s ease-out;
+    filter: drop-shadow(0 8px 15px var(--shadow-color));
 }
 
-/* Keyframes for the weather-icon animation */
 @keyframes fadeInScale {
     from {
         transform: scale(0.5);
@@ -99,15 +98,15 @@ button:hover {
     }
 }
 
-/* Applying the animation to the weather-icon */
 .weather-icon {
     animation: fadeInScale 0.5s ease-out forwards;
+    filter: drop-shadow(0 8px 15px var(--shadow-color));
 }
 
-/* Dark mode adjustments */
 body.dark-mode .weather-icon-container {
-    --icon-bg-color: #333; /* Dark background color for dark mode */
-    box-shadow: 0 8px 15px var(--shadow-color-dark); /* Ensure the shadow is visible in dark mode */
+    --icon-bg-color: #333;
+    box-shadow: 0 8px 15px var(--shadow-color-dark);
+    filter: drop-shadow(0 8px 15px var(--shadow-color));
 }
 
 
@@ -147,7 +146,6 @@ body.dark-mode button:hover {
     background-color: #777;
 }
 
-/* Ensure the layout adapts to smaller screens gracefully */
 @media (max-width: 768px) {
     .weather-details {
         padding: 15px;
@@ -158,11 +156,10 @@ body.dark-mode button:hover {
     }
 
     .weather-icon {
-        width: 60px; /* Adjust for smaller screens */
+        width: 60px;
     }
 }
 
-/* Responsive design */
 @media (max-width: 640px) {
     form {
         flex-direction: column;
